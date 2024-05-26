@@ -7,3 +7,15 @@ get("/") do
   <p>Define some routes in app.rb</p>
   "
 end
+
+get("/umbrella") do
+  "howdy"
+
+  erb(:umbrella_form)
+end
+
+get("/process_umbrella") do
+  @user_location = params.fetch("user_loc")
+
+  erb(:umbrella_results)
+end
